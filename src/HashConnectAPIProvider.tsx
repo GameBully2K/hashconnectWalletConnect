@@ -105,8 +105,8 @@ export default function HashConnectProvider({
       } else {
         if (debug) console.log("====Local data found====", localData);
         //use loaded data for initialization + connection
-        hashConnect.init(metaData ?? APP_CONFIG, localData?.privateKey);
-        hashConnect.connect(
+        await hashConnect.init(metaData ?? APP_CONFIG, localData?.privateKey);
+        await hashConnect.connect(
           localData?.topic,
           localData?.pairedWalletData ?? metaData
         );
